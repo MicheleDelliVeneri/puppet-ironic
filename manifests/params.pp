@@ -39,47 +39,6 @@ class ironic::params {
 
   case $facts['os']['family'] {
     'RedHat': {
-<<<<<<< HEAD
-      $common_package_name       = 'openstack-ironic-common'
-      $api_package               = 'openstack-ironic-api'
-      $api_service               = 'openstack-ironic-api'
-      $conductor_package         = 'openstack-ironic-conductor'
-      $conductor_service         = 'openstack-ironic-conductor'
-      $dnsmasq_tftp_package      = 'openstack-ironic-dnsmasq-tftp-server'
-      $dnsmasq_tftp_service      = 'openstack-ironic-dnsmasq-tftp-server'
-      $inspector_package         = 'openstack-ironic-inspector'
-      $inspector_dnsmasq_package = 'openstack-ironic-inspector-dnsmasq'
-      $inspector_service         = 'openstack-ironic-inspector'
-      $inspector_dnsmasq_service = 'openstack-ironic-inspector-dnsmasq'
-      $staging_drivers_package   = 'openstack-ironic-staging-drivers'
-      $systemd_python_package    = 'systemd-python'
-      $ipxe_rom_dir              = '/usr/share/ipxe'
-      $ipxe_name_base            = 'ipxe-snponly'
-      $uefi_pxe_bootfile_name    = 'bootx64.efi'
-      $uefi_ipxe_bootfile_name   = 'snponly.efi'
-      $ironic_wsgi_script_path   = '/var/www/cgi-bin/ironic'
-      $ironic_wsgi_script_source = '/usr/bin/ironic-api-wsgi'
-      $xinetd_available          = false
-      $tftpd_package             = false
-      $ipxe_package              = 'ipxe-bootimgs'
-      $pxelinux_package          = false
-      $pxelinux_path             = false
-      $syslinux_package          = 'syslinux-tftpboot'
-      $syslinux_path             = '/tftpboot'
-      $syslinux_files            = ['pxelinux.0', 'chain.c32', 'ldlinux.c32']
-      $grub_efi_package          = 'grub2-efi-x64'
-      $shim_package              = 'shim'
-      case $facts['os']['name'] {
-        'RedHat': {
-          $grub_efi_file = '/boot/efi/EFI/redhat/grubx64.efi'
-          $shim_file     = '/boot/efi/EFI/redhat/shimx64.efi'
-        }
-        default: {
-          $grub_efi_file = '/boot/efi/EFI/centos/grubx64.efi'
-          $shim_file     = '/boot/efi/EFI/centos/shimx64.efi'
-        }
-      }
-=======
       $common_package_name          = 'openstack-ironic-common'
       $api_package                  = 'openstack-ironic-api'
       $api_service                  = 'openstack-ironic-api'
@@ -117,7 +76,6 @@ class ironic::params {
       $grub_efi_file                = "/boot/efi/EFI/${downcase($facts['os']['name'])}/grubx64.efi"
       $shim_package                 = 'shim'
       $shim_file                    = "/boot/efi/EFI/${downcase($facts['os']['name'])}/shimx64.efi"
->>>>>>> 0e78daf (Simplify logic to locate efi/shim file)
     }
     'Debian': {
       $common_package_name       = 'ironic-common'
