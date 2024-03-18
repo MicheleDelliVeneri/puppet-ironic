@@ -1,5 +1,0 @@
----
-features:
-  - |
-    The new ``ironic::healthcheck::ignore_proxied_requests`` parameter has been
-    added.
